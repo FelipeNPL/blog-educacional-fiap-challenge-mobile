@@ -1,0 +1,105 @@
+app
+
+
+GET
+/
+Mensagem de boas-vindas
+
+posts
+
+
+GET
+/posts
+Listar todos os posts
+
+
+POST
+/posts
+Criar uma nova postagem
+
+
+
+GET
+/posts/search
+Buscar posts por palavra-chave
+
+
+GET
+/posts/{id}
+Obter um post pelo ID
+
+
+PUT
+/posts/{id}
+Editar uma postagem existente
+
+
+
+DELETE
+/posts/{id}
+Excluir uma postagem
+
+
+auth
+
+
+POST
+/auth/register
+Registrar um novo usuário
+
+
+POST
+/auth/login
+Autenticar um usuário
+
+
+Schemas
+CreatePostDto{
+title*	string
+example: O Futuro da Inteligência Artificial na Educação
+O título da postagem
+
+content*	string
+example: Conteúdo detalhado sobre IA...
+O conteúdo da postagem
+
+author	string
+example: João Silva
+O autor da postagem (opcional)
+
+}
+UpdatePostDto{
+title	string
+example: O Futuro da IA na Educação (Atualizado)
+O novo título da postagem
+
+content	string
+example: Novo conteúdo atualizado...
+O novo conteúdo da postagem
+
+}
+RegisterDto{
+email*	string
+example: usuario@exemplo.com
+E-mail do novo usuário
+
+password*	string
+example: senha123
+minLength: 6
+Senha do novo usuário (mínimo 6 caracteres)
+
+name*	string
+example: Nome do Usuário
+Nome completo do usuário
+
+}
+LoginDto{
+email*	string
+example: usuario@exemplo.com
+E-mail do usuário
+
+password*	string
+example: senha123
+Senha do usuário
+
+}
